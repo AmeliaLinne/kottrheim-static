@@ -1,223 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="src/style.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Amelia Andersson" />
+    <title>A Love Story</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@600&display=swap"
-      rel="stylesheet"
-    />
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=h1
-    , initial-scale=1.0"
-    />
-    <meta
-      name="keywords"
-      content="Kottrheim family information"
-    />
-    <meta name="author" content="Amelia Andersson" />
-    <title>Kottrheim</title>
-    <meta
-      name="description"
-      content="This is a website for the Andersson Linne family"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,300&family=Uncial+Antiqua&family=IM+Fell+English:ital@1&display=swap" rel="stylesheet" />
+    <style>
+      *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      body {
+        background-color: #111;
+        color: #eee;
+        font-family: 'Lato', sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        /* Prevent side scroll on mobile */
+        overflow-x: hidden;
+      }
+
+      /* ── Cover ── */
+      .cover {
+        width: 100%;
+        max-width: 480px;
+        padding: 56px 24px 40px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+      }
+
+      .cover-logo {
+        width: 100%;
+        max-width: 480px;
+      }
+
+      .cover-logo svg text {
+        fill: #eee;
+      }
+
+      .scroll-hint {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        margin-top: 6px;
+        font-size: 0.7rem;
+        font-weight: 300;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #666;
+        animation: bob 2.2s ease-in-out infinite;
+      }
+
+      .scroll-hint svg {
+        width: 16px;
+        height: 16px;
+        stroke: #666;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        fill: none;
+      }
+
+      @keyframes bob {
+        0%, 100% { transform: translateY(0);   opacity: 0.6; }
+        50%       { transform: translateY(5px); opacity: 1;   }
+      }
+
+      /* ── Comic strip ─────────────────────────────────────── */
+      /*
+         Webtoon style: panels stack with zero gap so they read
+         as one continuous scroll. Each image fills the full
+         column width.
+      */
+      .comic-strip {
+        width: 100%;
+        max-width: 480px;
+        font-size: 0;
+        line-height: 0;
+        background-color: #fff;
+      }
+
+      .comic-strip img {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin-bottom: -2px;
+      }
+
+      /* ── End card ── */
+      .end-card {
+        width: 100%;
+        max-width: 480px;
+        padding: 52px 24px 80px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .heart {
+        font-size: 2rem;
+        display: inline-block;
+        animation: pulse 1.8s ease-in-out infinite;
+        color: #f7c5c5;
+      }
+
+      @keyframes pulse {
+        0%, 100% { transform: scale(1);    }
+        50%       { transform: scale(1.18); }
+      }
+
+      .end-card h2 {
+        font-family: 'Lobster', cursive;
+        font-size: clamp(1.6rem, 6vw, 2rem);
+        color: #f7c5c5;
+      }
+
+      .end-card p {
+        font-size: 0.8rem;
+        font-weight: 300;
+        font-style: italic;
+        color: #666;
+        letter-spacing: 0.06em;
+      }
+    </style>
   </head>
-  <body style="background-color: rgb(25, 42, 37)">
+  <body>
 
-    <!--  NAVBAR FULLSCREEN-->
-    <nav class="navbar navbar-expand-lg fixed-top py-0 navbar-custom " id="nav">
-      <!--  Container wrapper -->
-      <div class="container-fluid">
-          <!--  Left Elements -->
-          <div class="col-lg-4 d-flex justify-content-center justify-content-md-start align-items-center .d-block ">
-            <a class="navbar-brand" href="#"><span class="name">Kottrheim</span></a>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <div class="navbar-nav">
-                <a
-                  class="nav-link"
-                  aria-current="page"
-                  href="#intro"
-                  title="Link to homepage"
-                  >Start</a
-                >
-                <a
-                  class="nav-link"
-                  aria-current="page"
-                  href="#location"
-                  title="Link to homepage"
-                  >Plats</a
-                >
-                <a
-                  class="nav-link"
-                  aria-current="page"
-                  href="#tid"
-                  title="Link to homepage"
-                  >Tid</a
-                >
-                <a
-                  class="nav-link"
-                  aria-current="page"
-                  href="#mat"
-                  title="Link to homepage"
-                  >Middag</a
-                >
-              </div>
-            </div>
-          </div>
-          <button
-            class="navbar-toggler custom-toggler show_on_mobile ml-auto"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          > 
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <!--  Center Elements -->      
-          <div class="col-lg-4 align-items-center d-flex justify-content-center d-none d-md-block">
-            <div class="title">Amelia Andersson & Alexander Linné</div>
-          </div>
-
-          <!--  Right Elements -->
-          <div class="col-lg-4 d-flex justify-content-center justify-content-md-end align-items-center d-none d-md-block">
-            <div class="subtitle">15 Juni 2024, Slottsträdgårdens Kafé</div>
-          </div>
+    <!-- Cover -->
+    <header class="cover">
+      <div class="cover-logo">
+        <svg width="100%" viewBox="0 0 680 285" role="img" xmlns="http://www.w3.org/2000/svg">
+          <title>The Unexpected Party</title>
+          <desc>Rustic hand-lettered fantasy logo for the webcomic "The Unexpected Party"</desc>
+          <path d="M 75,72 Q 192,67 307,72 Q 192,77 75,72 Z" fill="#C8860A" opacity="0.55"/>
+          <g transform="translate(340,72)">
+            <line x1="0" y1="-12" x2="0" y2="12" stroke="#C8860A" stroke-width="2.2" stroke-linecap="round"/>
+            <line x1="-10.4" y1="-6" x2="10.4" y2="6" stroke="#C8860A" stroke-width="2.2" stroke-linecap="round"/>
+            <line x1="-10.4" y1="6" x2="10.4" y2="-6" stroke="#C8860A" stroke-width="2.2" stroke-linecap="round"/>
+          </g>
+          <path d="M 605,72 Q 488,67 373,72 Q 488,77 605,72 Z" fill="#C8860A" opacity="0.55"/>
+          <circle cx="317" cy="72" r="2.5" fill="#C8860A" opacity="0.4"/>
+          <circle cx="363" cy="72" r="2.5" fill="#C8860A" opacity="0.4"/>
+          <text x="341" y="108" text-anchor="middle" font-family="'IM Fell English', Georgia, serif" font-style="italic" font-size="15" letter-spacing="6" fill="#C8860A" opacity="0.25">the</text>
+          <text x="340" y="107" text-anchor="middle" font-family="'IM Fell English', Georgia, serif" font-style="italic" font-size="15" letter-spacing="6" fill="#ccc">the</text>
+          <text x="342" y="170" text-anchor="middle" font-family="'Uncial Antiqua', cursive" font-size="56" fill="#C8860A" opacity="0.18">Unexpected</text>
+          <text x="340" y="168" text-anchor="middle" font-family="'Uncial Antiqua', cursive" font-size="56" fill="#eee">Unexpected</text>
+          <text x="342" y="217" text-anchor="middle" font-family="'Uncial Antiqua', cursive" font-size="44" fill="#C8860A" opacity="0.18">Party</text>
+          <text x="340" y="215" text-anchor="middle" font-family="'Uncial Antiqua', cursive" font-size="44" fill="#eee">Party</text>
+          <path d="M 78,237 Q 191,232 300,237 Q 191,242 78,237 Z" fill="#C8860A" opacity="0.55"/>
+          <circle cx="327" cy="237" r="2" fill="#C8860A" opacity="0.4"/>
+          <circle cx="340" cy="237" r="3.2" fill="#C8860A" opacity="0.55"/>
+          <circle cx="353" cy="237" r="2" fill="#C8860A" opacity="0.4"/>
+          <path d="M 602,237 Q 489,232 380,237 Q 489,242 602,237 Z" fill="#C8860A" opacity="0.55"/>
+          <text x="341" y="261" text-anchor="middle" font-family="'IM Fell English', Georgia, serif" font-style="italic" font-size="13" letter-spacing="4" fill="#C8860A" opacity="0.22">a webcomic</text>
+          <text x="340" y="260" text-anchor="middle" font-family="'IM Fell English', Georgia, serif" font-style="italic" font-size="13" letter-spacing="4" fill="#888">a webcomic</text>
+        </svg>
       </div>
-    </nav>
-
-    <!--  INTRO -->
-    <div class="intro section" id="intro">
-      <img
-        src="img/AlexochAmelia.png"
-        alt="Circle of flowers"
-        width="600"
-      />
-      <p> Den 15 Juni gifter vi oss och bjuder in er till vår vigseln och en liten middag efteråt med våra närmsta för att fira våran kärlek.<br>
-        Vi har ingen möjlighet att ta emot presenter på bröllopet och för oss så är eran närvaro den bästa presenten vi kan tänka oss.<br>
-        Om ni vill hålla ett tal eller lägga till något på schemat under middagen så kontakta vår Toastmaster Selina Andersson på mobilnumret 072-325 63 15 eller maila selinadieye@gmail.com <br>
-        Vi kommer bjuda på champagne, middag, kaffe och bröllopstårta. Det kommer finnas en bar där man kan köpa dricka till maten.
-        Det kommer förhoppningsvis vara soligt väder och vi kommer äta middag i ett växthus så ha inte för varma kläder på er.<br>
-        Vi tackar Gudrun Isaksson som viger oss denna dagen. <br>
-        </p>
-    </div>
-
-    <!--  LOCATION -->
-    <div class="text-center bg-image">
-      <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
-        <div class="d-flex justify-content-center align-items-center h-100">
-          <div class="location section" id="location">
-            <h1 class="header">Slottsträdgårdens Kafé</h1>
-            <h2 class="header">Adress</h2>
-            <p>Slottsträdgårdens Kafé <br>
-              Malmöhusvägen 8 <br>
-              211 18 Malmö <br>
-              <a href="https://slottstradgardenskafe.se/kontakt/"> Hitta hit </a><br>
-              Mer detaljerad information om exakt plats kommer ut cirka en vecka innan bröllopet.<br>
-              Vi kommer ha en liten karta med prick där vi ska ses för vigseln, same GPS koordinater som man kan knappa in i sin kart-app. <br>
-            </p>
-          </div>
-        </div>
+      <div class="scroll-hint">
+        scroll to read
+        <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
       </div>
-    </div>
+    </header>
 
-    <!--  TIME -->
-    <div class="tid section" id="tid">
-      <img
-        src="img/divider.png"
-        alt="Divider"
-        width="600"
-      />
-      <h1 class="header">Schema</h1>
-      <div class="container">
-        <div class="row d-flex">
-          <div class="col-5">
-              <h2 class="header leftschedule">Gäster</h2>
-              <p class="leftschedule" style="padding: 0px">
-                15.30: Vigsel<br>
-                16.00: Fotografering med gäster<br>
-                17.00: Champagneskålning<br>
-                17.30: Middag<br>
-              </p>
-          </div>
-          <div class="col-2">
-            <div class="center">
-              <div style="border-left:1px solid #FFF;height:300px"></div>
-            </div>
-          </div>
-          <div class="col-5">
-              <h2 class="header rightschedule">Brudparet</h2>
-              <p class="rightschedule" style="padding: 0px">
-                13.00: First look<br>
-                13.15: Fotografering<br>
-                15.30: Vigsel<br>
-                16.00: Fotografering med gäster<br>
-                17.00: Champagneskålning<br>
-                17.30: Middag<br>
-                22.00: Hemgång<br>
-              </p>
-          </div>
-        </div>
-      </div>
-      <img
-        src="img/divider2.png"
-        alt="Divider"
-        width="600"
-      />
-    </div>
-    
-    <!--  DINNER -->
-    <div class="text-center bg-image">
-      <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
-        <div class="d-flex justify-content-center align-items-center h-100">
-          <div class="mat section" id="mat">
-            <h1 class="header">Middag</h1>
-            <br>
-            <h2 class="header">Förrätt</h2>
-            <h3 class="header">Skagenröra med krispigt bröd & citronkaviar</h3>
-            <br>
-            <h2 class="header">Huvudrätt</h2>
-            <h3 class="header">Långbakad medium-rare entrecôte</h3>
-            <h3 class="header">Med confiterade grönsaker, lingon coulis & salvia.</h3>
-            <br>
-            <h2 class="header">Efterrätt</h2>
-            <h3 class="header">Bröllopstårta</h3>
-            <h3 class="header">Vit chokladmousse, vaniljkräm, färska bär & ätbara blommor. Avklädd tårta.</h3>
-          </div>
-        </div>
-      </div>
-    </div>
+    <!-- Comic pages — zero-gap vertical scroll -->
+    <main class="comic-strip">
+      <img src="img/party/1.png"  alt="Page 1"  />
+      <img src="img/party/2.png"  alt="Page 2"  />
+      <img src="img/party/3.png"  alt="Page 3"  />
+      <img src="img/party/4.png"  alt="Page 4"  />
+      <img src="img/party/5.png"  alt="Page 5"  />
+      <img src="img/party/6.png"  alt="Page 6"  />
+      <img src="img/party/7.png"  alt="Page 7"  />
+      <img src="img/party/8.png"  alt="Page 8"  />
+      <img src="img/party/9.png"  alt="Page 9"  />
+      <img src="img/party/10.png" alt="Page 10" />
+      <img src="img/party/11.png" alt="Page 11" />
+      <img src="img/party/12.png" alt="Page 12" />
+      <img src="img/party/13.png" alt="Page 13" />
+      <img src="img/party/14.png" alt="Page 14" />
+    </main>
 
-    <!--  OUTRO -->
-    <div class="outro section" id="outro">
-      <img
-        src="img/AlexochameliaChibi.png"
-        alt="Circle of flowers"
-        width="600"
-      />
-      <h2 class="header">Tack för att ni vill fira våran dag med oss</h2>
-      <img
-        src="img/divider2.png"
-        alt="Circle of flowers"
-        width="600"
-      />
-    </div>
+    <!-- End card -->
+    <footer class="end-card">
+      <span class="heart">♡</span>
+      <h2>The End</h2>
+      <p>just for you</p>
+    </footer>
 
   </body>
 </html>
