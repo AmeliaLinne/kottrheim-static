@@ -36,7 +36,7 @@
       .cover {
         width: 100%;
         max-width: 480px;
-        padding: 56px 24px 40px;
+        padding: 56px 0 40px;
         text-align: center;
         display: flex;
         flex-direction: column;
@@ -46,11 +46,10 @@
 
       .cover-logo {
         width: 100%;
-        max-width: 480px;
       }
 
-      .cover-logo svg text {
-        fill: #eee;
+      .scroll-hint {
+        padding: 0 24px;
       }
 
       .scroll-hint {
@@ -63,14 +62,14 @@
         font-weight: 300;
         letter-spacing: 0.12em;
         text-transform: uppercase;
-        color: #666;
+        color: #999;
         animation: bob 2.2s ease-in-out infinite;
       }
 
       .scroll-hint svg {
         width: 16px;
         height: 16px;
-        stroke: #666;
+        stroke: #999;
         stroke-width: 2;
         stroke-linecap: round;
         stroke-linejoin: round;
@@ -147,31 +146,31 @@
     <!-- Cover -->
     <header class="cover">
       <div class="cover-logo">
-        <svg width="100%" viewBox="0 0 680 285" role="img" xmlns="http://www.w3.org/2000/svg">
+        <svg width="100%" viewBox="0 0 680 308" role="img" xmlns="http://www.w3.org/2000/svg">
           <title>The Unexpected Party</title>
           <desc>Rustic hand-lettered fantasy logo for the webcomic "The Unexpected Party"</desc>
-          <path d="M 75,72 Q 192,67 307,72 Q 192,77 75,72 Z" fill="#C8860A" opacity="0.55"/>
+          <path d="M 50,72 Q 183,67 316,72 Q 183,77 50,72 Z" fill="#C8860A" opacity="0.55"/>
           <g transform="translate(340,72)">
             <line x1="0" y1="-12" x2="0" y2="12" stroke="#C8860A" stroke-width="2.2" stroke-linecap="round"/>
             <line x1="-10.4" y1="-6" x2="10.4" y2="6" stroke="#C8860A" stroke-width="2.2" stroke-linecap="round"/>
             <line x1="-10.4" y1="6" x2="10.4" y2="-6" stroke="#C8860A" stroke-width="2.2" stroke-linecap="round"/>
           </g>
-          <path d="M 605,72 Q 488,67 373,72 Q 488,77 605,72 Z" fill="#C8860A" opacity="0.55"/>
-          <circle cx="317" cy="72" r="2.5" fill="#C8860A" opacity="0.4"/>
-          <circle cx="363" cy="72" r="2.5" fill="#C8860A" opacity="0.4"/>
-          <text x="341" y="108" text-anchor="middle" font-family="'IM Fell English', Georgia, serif" font-style="italic" font-size="15" letter-spacing="6" fill="#C8860A" opacity="0.25">the</text>
-          <text x="340" y="107" text-anchor="middle" font-family="'IM Fell English', Georgia, serif" font-style="italic" font-size="15" letter-spacing="6" fill="#ccc">the</text>
-          <text x="342" y="170" text-anchor="middle" font-family="'Uncial Antiqua', cursive" font-size="56" fill="#C8860A" opacity="0.18">Unexpected</text>
-          <text x="340" y="168" text-anchor="middle" font-family="'Uncial Antiqua', cursive" font-size="56" fill="#eee">Unexpected</text>
-          <text x="342" y="217" text-anchor="middle" font-family="'Uncial Antiqua', cursive" font-size="44" fill="#C8860A" opacity="0.18">Party</text>
-          <text x="340" y="215" text-anchor="middle" font-family="'Uncial Antiqua', cursive" font-size="44" fill="#eee">Party</text>
-          <path d="M 78,237 Q 191,232 300,237 Q 191,242 78,237 Z" fill="#C8860A" opacity="0.55"/>
-          <circle cx="327" cy="237" r="2" fill="#C8860A" opacity="0.4"/>
-          <circle cx="340" cy="237" r="3.2" fill="#C8860A" opacity="0.55"/>
-          <circle cx="353" cy="237" r="2" fill="#C8860A" opacity="0.4"/>
-          <path d="M 602,237 Q 489,232 380,237 Q 489,242 602,237 Z" fill="#C8860A" opacity="0.55"/>
-          <text x="341" y="261" text-anchor="middle" font-family="'IM Fell English', Georgia, serif" font-style="italic" font-size="13" letter-spacing="4" fill="#C8860A" opacity="0.22">a webcomic</text>
-          <text x="340" y="260" text-anchor="middle" font-family="'IM Fell English', Georgia, serif" font-style="italic" font-size="13" letter-spacing="4" fill="#888">a webcomic</text>
+          <path d="M 630,72 Q 497,67 364,72 Q 497,77 630,72 Z" fill="#C8860A" opacity="0.55"/>
+          <circle cx="323" cy="72" r="2.5" fill="#C8860A" opacity="0.4"/>
+          <circle cx="357" cy="72" r="2.5" fill="#C8860A" opacity="0.4"/>
+          <text x="341" y="113" text-anchor="middle" font-family="'IM Fell English', Georgia, serif" font-style="italic" font-size="18" letter-spacing="6" fill="#C8860A" opacity="0.25">the</text>
+          <text x="340" y="112" text-anchor="middle" font-family="'IM Fell English', Georgia, serif" font-style="italic" font-size="18" letter-spacing="6" fill="#ccc">the</text>
+          <text x="342" y="182" text-anchor="middle" font-family="'Uncial Antiqua', cursive" font-size="62" fill="#C8860A" opacity="0.18">Unexpected</text>
+          <text x="340" y="180" text-anchor="middle" font-family="'Uncial Antiqua', cursive" font-size="62" fill="#eee">Unexpected</text>
+          <text x="342" y="234" text-anchor="middle" font-family="'Uncial Antiqua', cursive" font-size="50" fill="#C8860A" opacity="0.18">Party</text>
+          <text x="340" y="232" text-anchor="middle" font-family="'Uncial Antiqua', cursive" font-size="50" fill="#eee">Party</text>
+          <path d="M 50,257 Q 183,252 316,257 Q 183,262 50,257 Z" fill="#C8860A" opacity="0.55"/>
+          <circle cx="330" cy="257" r="2" fill="#C8860A" opacity="0.4"/>
+          <circle cx="340" cy="257" r="3.2" fill="#C8860A" opacity="0.55"/>
+          <circle cx="350" cy="257" r="2" fill="#C8860A" opacity="0.4"/>
+          <path d="M 630,257 Q 497,252 364,257 Q 497,262 630,257 Z" fill="#C8860A" opacity="0.55"/>
+          <text x="341" y="284" text-anchor="middle" font-family="'IM Fell English', Georgia, serif" font-style="italic" font-size="16" letter-spacing="4" fill="#C8860A" opacity="0.22">a webcomic</text>
+          <text x="340" y="283" text-anchor="middle" font-family="'IM Fell English', Georgia, serif" font-style="italic" font-size="16" letter-spacing="4" fill="#888">a webcomic</text>
         </svg>
       </div>
       <div class="scroll-hint">
